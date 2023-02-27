@@ -11,8 +11,9 @@ class VansController < ApplicationController
 
   def create
     @van = Van.new(van_params)
+    @van.user = @current_user
     if @van.save
-      redirect_to vans_path(@van)
+      redirect_to vans_path
     else
       render 'new', status: :unprocessable_entity
     end
@@ -25,6 +26,6 @@ class VansController < ApplicationController
   end
 
   def van_params
-    params.require(:user).permit(:title, :capacity, :price, :description, :model, :year)
+    params.require(:van).permit(:title, :capacity, :price, :description, :model, :year, :user_id)
   end
 end

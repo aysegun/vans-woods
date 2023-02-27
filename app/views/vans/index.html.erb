@@ -1,2 +1,9 @@
 <h3>Rent any van you want</h3>
 <%= link_to "Create a new van", new_van_path %>
+
+
+<% @vans.each do |van| %>
+  <%= link_to van_path(van) %>
+  <%= van.model %>
+  <%= van.description %>
+<% end %>
