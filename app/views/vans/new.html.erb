@@ -1,0 +1,12 @@
+<h3>Create a new van</h3>
+<%= simple_form_for (@van) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :capacity %>
+  <%= f.input :model %>
+  <%= f.input :year %>
+  <%= f.submit 'Submit van' %>
+<% end %>
+
+<%= link_to 'Back', vans_path %>
