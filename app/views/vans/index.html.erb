@@ -1,2 +1,19 @@
-<h3>Rent any van you want</h3>
-<%= link_to "Create a new van", new_van_path %>
+<div class="mb-3 ms-3">
+  <h3 style= "text-align: center">RVs, Campervans and Motorhomes</h3>
+</div>
+
+<div class="cards-container">
+  <% @vans.each do |van| %>
+    <div class="card">
+      <img src= "https://images.unsplash.com/photo-1677517661310-3558e5b2e059?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80">
+      <div class="ms-3 me-3">
+        <h3><%= van.model %></h3>
+        <div class="card-info d-flex justify-content-between">
+          <p>Capacity: <%= van.capacity %> people</p>
+          <p>Price: <%= van.price %> €</p>
+        </div>
+        <p style="margin-top: -10px;"><%= link_to "More information", van_path(van) %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
