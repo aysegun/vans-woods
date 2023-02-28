@@ -1,0 +1,47 @@
+// .van {
+//   padding: 30px;
+// }
+
+
+ .van-card{
+  height: 500px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  margin: 30px;
+  padding: 25px;
+ }
+
+.left-card {
+margin-top: 30px;
+padding: 25px;
+text-align: justify;
+vertical-align: middle;
+}
+
+.right-card {
+  margin-top: 20px;
+  height: 400px;
+}
+
+
+.image-card {
+  padding: 20px;
+  object-fit: cover;
+  height: 400px;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  align-items: flex-end;
+  display: flex;
+  color:white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+p {
+font-size: 18px;
+}
+
+i{
+  padding:5px;
+}
