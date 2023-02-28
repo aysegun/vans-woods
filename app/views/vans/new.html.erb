@@ -1,12 +1,28 @@
-<h3>Create a new van</h3>
-<%= simple_form_for (@van) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.input :capacity %>
-  <%= f.input :model %>
-  <%= f.input :year %>
-  <%= f.submit 'Submit van' %>
-<% end %>
+<div class="background-image">
+  <div class="wrapper">
 
-<%= link_to 'Back', vans_path %>
+    <div class="header">
+      <h1>Rent my van</h1>
+      <p>Create a free listing and start earning!</p>
+    </div>
+
+    <div class="form">
+      <%= simple_form_for (@van) do |f| %>
+      <%= f.input :title, id:"title-input", placeholder: "Add a title..."%>
+      <%= f.input :price, placeholder: "Add a price per night..."%>
+      <%= f.input :description, placeholder: "Add a description..." %>
+      <%= f.input :capacity, placeholder: "Your van's passanger capacity"...%>
+      <%= f.input :model, placeholder: "Add your van's model..."%>
+      <%= f.input :year, placeholder: "Add your van's production year..."%>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+
+      <div class="submit-div">
+          <%= f.submit 'Submit', id: "submit-button" %>
+        <% end %>
+        <div>
+          <%= link_to 'Back', vans_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
