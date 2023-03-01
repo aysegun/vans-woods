@@ -8,7 +8,7 @@
         <p><i class="fa-solid fa-children"></i></i> capacity: <%=@van.capacity%> people</p>
         <p><i class="fa-solid fa-seedling"></i></i>  year: <%=@van.year%></h3>
         <p><i class="fa-solid fa-van-shuttle"></i> model: <%=@van.model%></p>
-        <%= link_to "Book this van", new_van_bookings_path, class: "btn btn-flat" %>
+        <%= link_to "Book this van", new_van_booking_path(@van), class: "btn btn-flat" %>
       </div>
       <div class ="right-card col-12 col-lg-6 d-flex">
         <div class="image-card" style ="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path @van.photos.first.key, height: 400, width: 600, crop: :fill %>');">
