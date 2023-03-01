@@ -1,5 +1,5 @@
 <div class="mb-3 ms-3">
-  <h3 style= "text-align: center">RVs, Campervans and Motorhomes</h3>
+  <h3 style= "text-align: center"><strong>Available Campervans and Motorhomes</strong></h3>
 </div>
 
 <div class="cards-container">
@@ -10,9 +10,9 @@
         <h3><%= van.model %></h3>
         <div class="card-info d-flex justify-content-between">
           <p>Capacity: <%= van.capacity %> people</p>
-          <p>Price: <%= van.price %> €</p>
+          <p><strong><%= van.price %>€ /day</strong></p>
         </div>
-        <p style="margin-top: -10px;"><%= link_to "More information", van_path(van) %></p>
+        <p style="margin-top: -10px;"><%= link_to "Read more", van_path(van) %></p>
       </div>
     </div>
   <% end %>
