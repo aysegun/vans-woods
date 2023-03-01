@@ -1,27 +1,22 @@
 <div class="container">
-  <div class="van-card d-flex">
-    <div class="left-card col-12 col-lg-6">
-      <div class= "van title">
-        <h2><strong><%=@van.title%></strong></h2>
+  <div class="van-card">
+    <h2 class="text-center"><strong><%=@van.title%></strong></h2>
+    <div class="d-flex">
+      <div class="left-card col-12 col-lg-6">
+        <div class= "van title"> </div>
+        <div> <p><%=@van.description%></p></div>
+        <p><i class="fa-solid fa-children"></i></i> capacity: <%=@van.capacity%> people</p>
+        <p><i class="fa-solid fa-seedling"></i></i>  year: <%=@van.year%></h3>
+        <p><i class="fa-solid fa-van-shuttle"></i> model: <%=@van.model%></p>
+        <%= link_to "Book this van", new_van_path, class: "btn btn-flat" %>
       </div>
-      <div>
-        <p>This van will take you back to the 80's. Explore nature and go back in time.<%=@van.description%></p>
+      <div class ="right-card col-12 col-lg-6 d-flex">
+        <div class="image-card" style ="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path @van.photos.first.key, height: 400, width: 600, crop: :fill %>');">
+        <p><strong><%=@van.price%>€ </strong> per day </p>
       </div>
-      <p><i class="fa-solid fa-children"></i></i> capacity: <%=@van.capacity%> people</p>
-      <p><i class="fa-solid fa-seedling"></i></i>  year: <%=@van.year%></h3>
-      <p><i class="fa-solid fa-van-shuttle"></i> model: <%=@van.model%></p>
-      <%# <p><i class="fa-solid fa-coins"></i></i> price per day: <%=@van.price%>
-      <%= link_to "Book this van", new_van_path, class: "btn btn-flat" %>
-    </div>
-    <div class ="right-card col-12 col-lg-6 d-flex">
-      <div class="image-card" style ="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://cdn.cheapism.com/images/PSX_20190210_150356.max-784x410.jpg');">
-      <p><strong><%=@van.price%>€ </strong> per day </p>
-      </div>
-
-
     </div>
   </div>
 </div>
-
+  </div>
+   <%= link_to "Back to vans", "/vans" %>
 </div>
-  <%= link_to "Back to vans", "/vans" %>
