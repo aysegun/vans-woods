@@ -20,7 +20,7 @@
   }
 }
 
-h1, p {
+.header h1, .header p {
   text-align: center;
 }
 
@@ -34,9 +34,4 @@ h1, p {
   background-color: forestgreen;
   color: white;
   font-weight: bold;
-}
-
-#link-to {
-  text-decoration: none;
-  color: black;
 }
