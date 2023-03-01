@@ -5,7 +5,7 @@
         <h2><strong><%=@van.title%></strong></h2>
       </div>
       <div>
-        <p>This van will take you back to the 80's. Explore nature and go back in time.<%=@van.description%></p>
+        <p><%=@van.description%></p>
       </div>
       <p><i class="fa-solid fa-children"></i></i> capacity: <%=@van.capacity%> people</p>
       <p><i class="fa-solid fa-seedling"></i></i>  year: <%=@van.year%></h3>
@@ -14,7 +14,7 @@
       <%= link_to "Book this van", new_van_path, class: "btn btn-flat" %>
     </div>
     <div class ="right-card col-12 col-lg-6 d-flex">
-      <div class="image-card" style ="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://cdn.cheapism.com/images/PSX_20190210_150356.max-784x410.jpg');">
+      <div class="image-card" style ="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path @van.photos.first.key, height: 400, width: 600, crop: :fill %>');">
       <p><strong><%=@van.price%>€ </strong> per day </p>
       </div>
 
