@@ -1,0 +1,24 @@
+
+  <div class="background-image-bookings">
+    <div class="wrapper-div">
+      <div class="wrapper-bookings">
+
+        <div class="header-bookings">
+          <h3>New Booking</h3>
+          <p>Check the availability!</p>
+        </div>
+
+        <div class="form-booking">
+          <%= simple_form_for [@van, @booking] do |f| %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+
+          <div class="submit-div">
+            <%= f.submit "Submit booking", id: "submit-button" %>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>

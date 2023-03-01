@@ -4,6 +4,7 @@
   grid-gap: 30px;
   width: 90%;
   margin: 0 auto;
+  margin-top: 25px;
 }
 
 // Smallest device
@@ -49,7 +50,7 @@
   color: black;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 300px;
@@ -67,22 +68,25 @@
 }
 .card-info h3 {
 font-size: 16px;
-
 color: black;
 }
 .card-info p {
   font-size: 12px;
-  margin: 0;
   color: black;
+  font-family: "Nunito", "Helvetica", "sans-serif";
 }
 .card a {
   font-size: 12px;
   margin-top: 0;
   color: black;
+  text-align:left;
+  font-family: "Nunito", "Helvetica", "sans-serif";
 }
 .card h3 {
-  font-size: 12px;
+  font-size: 17px;
   margin-top: 20px;
   margin-bottom: 5px;
+  font-weight: bold;
+  font-family: "Nunito", "Helvetica", "sans-serif";
 
 }

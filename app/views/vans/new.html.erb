@@ -2,18 +2,18 @@
   <div class="wrapper">
 
     <div class="header">
-      <h1>Rent my van</h1>
-      <p>Create a free listing and start earning!</p>
+      <h1>Rent your van</h1>
+      <p> Submit your details to list your van</p>
     </div>
 
     <div class="form">
       <%= simple_form_for (@van) do |f| %>
-      <%= f.input :title, id:"title-input", placeholder: "Add a title..."%>
-      <%= f.input :price, placeholder: "Add a price per night..."%>
-      <%= f.input :description, placeholder: "Add a description..." %>
+      <%= f.input :title, id:"title-input", placeholder: "For example: Super cool and family-friendly van"%>
+      <%= f.input :price, placeholder: "Add a price per day"%>
+      <%= f.input :description, placeholder: "(max. 600 characters)" %>
       <%= f.input :capacity, placeholder: "Your van's passanger capacity..."%>
       <%= f.input :model, placeholder: "Add your van's model..."%>
-      <%= f.input :year, placeholder: "Add your van's production year..."%>
+      <%= f.input :year, placeholder: "Add your van's year..."%>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
       <div class="submit-div">

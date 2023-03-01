@@ -13,7 +13,6 @@ class VansController < ApplicationController
     @van = Van.find(params[:id])
   end
 
-
   def create
     @van = Van.new(van_params)
     @van.user = current_user
