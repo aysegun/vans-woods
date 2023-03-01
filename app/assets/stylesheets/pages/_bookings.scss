@@ -1,0 +1,29 @@
+.background-image-bookings {
+  height: 100%;
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  background-position: cover;
+  background-size: cover;
+  padding: 30px;
+}
+
+.wrapper-bookings {
+  width: 40%;
+  margin: auto auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  border-radius: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  input {
+    border-radius: 6px;
+  }
+}
+.wrapper-div {
+  display: flex;
+  height: 100%;
+}
+
+.header-bookings h3 {
+  text-align: center;
+}
