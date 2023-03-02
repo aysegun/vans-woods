@@ -12,8 +12,9 @@
           <p>Capacity: <%= van.capacity %> people</p>
           <p><strong><%= van.price %>€ /day</strong></p>
         </div>
-        <p style="margin-top: -10px;"><%= link_to "Read more", van_path(van) %></p>
+        <p style="margin-top: -10px;"><%= link_to "More information...", van_path(van) %></p>
       </div>
+      <%= link_to '', van_path(van), class: 'card-link'  %>
     </div>
   <% end %>
 </div>

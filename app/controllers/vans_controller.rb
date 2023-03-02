@@ -16,9 +16,10 @@ class VansController < ApplicationController
   def create
     @van = Van.new(van_params)
     @van.user = current_user
-    if @van.save
+    if @van.photos.attached? && @van.save
       redirect_to vans_path
     else
+      flash[:notice] = "please attach a photo to your van listing"
       render 'new', status: :unprocessable_entity
     end
   end
