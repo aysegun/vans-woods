@@ -10,8 +10,8 @@
 
         <div class="form-booking">
           <%= simple_form_for [@van, @booking] do |f| %>
-            <%= f.input :start_date, as: :date, html5: :true %>
-            <%= f.input :end_date, as: :date, html5: :true %>
+            <%= f.input :start_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
+            <%= f.input :end_date, as: :string, input_html: { data: { controller: "flatpickr" } } %>
 
           <div class="submit-div">
             <%= f.submit "Submit booking", id: "submit-button" %>
