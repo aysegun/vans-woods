@@ -3,6 +3,14 @@ class VansController < ApplicationController
 
   def index
     @vans = Van.all
+    @markers = @vans.geocoded.map do |van|
+      {
+        lat: van.latitude,
+        lng: van.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {van: van}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   def new
@@ -11,6 +19,12 @@ class VansController < ApplicationController
 
   def show
     @van = Van.find(params[:id])
+    @markers = [{
+      lat: @van.latitude,
+      lng: @van.longitude,
+      info_window_html: render_to_string(partial: "info_window", locals: {van: @van}),
+      marker_html: render_to_string(partial: "marker")
+    }]
   end
 
   def create

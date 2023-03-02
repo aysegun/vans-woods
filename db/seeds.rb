@@ -1,6 +1,8 @@
 require "open-uri"
 
 puts "Cleaning database..."
+Booking.destroy_all
+Van.destroy_all
 User.destroy_all
 
 puts "Creating users..."
@@ -37,7 +39,8 @@ tincan = {
   capacity: 5,
   model: "Volkswagen Bus",
   year: 1990,
-  user_id: User.last.id
+  user_id: 10,
+  address: "C. del Consell de Cent, 329, 08007 Barcelona"
 }
 
 nomad = {
@@ -53,7 +56,8 @@ nomad = {
   capacity: 4,
   model: "Fiat Ducato",
   year: 2017,
-  user_id: User.last.id
+  user_id: 8,
+  address: "C/ de Ganduxer, 50, 08021 Barcelona"
 }
 
 kombi = {
@@ -68,7 +72,8 @@ kombi = {
   capacity: 6,
   model: "Volkswagen Premium",
   year: 2020,
-  user_id: User.last.id
+  user_id: 9,
+  address: "C/ de Muntaner, 171, 08036 Barcelona"
 }
 
 luxmobile = {
@@ -81,7 +86,8 @@ luxmobile = {
   capacity: 5,
   model: "Mercedez-Benz",
   year: 2021,
-  user_id: User.last.id
+  user_id: 12,
+  address: "C/ dels Almogàvers, 122, 08018 Barcelona"
 }
 
 woodvan = {
@@ -95,7 +101,8 @@ woodvan = {
   capacity: 4,
   model: "Fiat Ducato Knaus",
   year: 2018,
-  user_id: User.last.id
+  user_id: 12,
+  address: "C. de Pallars, 65, 08018 Barcelona"
 }
 
 toptin = {
@@ -109,7 +116,9 @@ toptin = {
   capacity: 4,
   model: "Fiat Ducato",
   year: 2015,
-  user_id: User.last.id
+  # user_id: User.last.id,
+  user_id: 12,
+  address: "Pg. de Joan de Borbó, 30, 08003 Barcelona"
 }
 
 #six links here
