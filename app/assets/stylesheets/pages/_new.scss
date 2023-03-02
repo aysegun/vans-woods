@@ -1,7 +1,6 @@
 .background-image {
-  height: 100%;
   width: 100vw;
-  background-image: asset-url("background_van.png");
+  background-image: asset-url("anothervan.png");
   background-position: center;
   background-size: cover;
   padding: 30px;
@@ -20,10 +19,8 @@
   }
 }
 
-
 .header h1, .header p {
   text-align: center;
-  font-weight: bold;
 }
 
 .submit-div {
@@ -38,4 +35,12 @@
   color: white;
   border:none;
   font-weight: bold;
+    &:hover {
+    border: 1px solid orangered;
+  }
+}
+
+.back-link a {
+  text-decoration: none;
+  color: black;
 }
