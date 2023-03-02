@@ -1,6 +1,8 @@
 require "open-uri"
 
 puts "Cleaning database..."
+Booking.destroy_all
+Van.destroy_all
 User.destroy_all
 
 puts "Creating users..."
@@ -19,8 +21,6 @@ puts "Finished!"
 
 #Seed vans
 
-puts "Cleaning database..."
-Van.destroy_all
 
 puts "Creating vans..."
 
