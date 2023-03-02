@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :vans do
     resources :bookings, only: %i[new create]
   end
-  resources :bookings, only: %i[destroy]
+  resources :bookings, only: %i[destroy update index]
 end
