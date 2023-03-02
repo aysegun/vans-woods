@@ -3,6 +3,14 @@ class VansController < ApplicationController
 
   def index
     @vans = Van.all
+    @markers = @vans.geocoded.map do |van|
+      {
+        lat: van.latitude,
+        lng: van.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {van: van}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   def new
@@ -11,14 +19,21 @@ class VansController < ApplicationController
 
   def show
     @van = Van.find(params[:id])
+    @markers = [{
+      lat: @van.latitude,
+      lng: @van.longitude,
+      info_window_html: render_to_string(partial: "info_window", locals: {van: @van}),
+      marker_html: render_to_string(partial: "marker")
+    }]
   end
 
   def create
     @van = Van.new(van_params)
     @van.user = current_user
-    if @van.save
+    if @van.photos.attached? && @van.save
       redirect_to vans_path
     else
+      flash[:notice] = "please attach a photo to your van listing"
       render 'new', status: :unprocessable_entity
     end
   end

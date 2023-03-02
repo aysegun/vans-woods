@@ -1,6 +1,8 @@
 // Specific CSS for your home-page
 
 .banner {
+  display: flex;
+  align-items: center;
   text-align: center;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
   height: calc(100vh - 66px);

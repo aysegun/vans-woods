@@ -1,5 +1,10 @@
 require "open-uri"
 
+Booking.destroy_all
+
+puts "Cleaning database..."
+Van.destroy_all
+
 puts "Cleaning database..."
 Booking.destroy_all
 Van.destroy_all
@@ -21,7 +26,6 @@ puts "Finished!"
 
 #Seed vans
 
-
 puts "Creating vans..."
 
 tincan = {
@@ -37,7 +41,8 @@ tincan = {
   capacity: 5,
   model: "Volkswagen Bus",
   year: 1990,
-  user_id: User.last.id
+  user_id: 10,
+  address: "C. del Consell de Cent, 329, 08007 Barcelona"
 }
 
 nomad = {
@@ -53,7 +58,8 @@ nomad = {
   capacity: 4,
   model: "Fiat Ducato",
   year: 2017,
-  user_id: User.last.id
+  user_id: 8,
+  address: "C/ de Ganduxer, 50, 08021 Barcelona"
 }
 
 kombi = {
@@ -68,7 +74,8 @@ kombi = {
   capacity: 6,
   model: "Volkswagen Premium",
   year: 2020,
-  user_id: User.last.id
+  user_id: 9,
+  address: "C/ de Muntaner, 171, 08036 Barcelona"
 }
 
 luxmobile = {
@@ -81,7 +88,8 @@ luxmobile = {
   capacity: 5,
   model: "Mercedez-Benz",
   year: 2021,
-  user_id: User.last.id
+  user_id: 12,
+  address: "C/ dels Almogàvers, 122, 08018 Barcelona"
 }
 
 woodvan = {
@@ -95,7 +103,8 @@ woodvan = {
   capacity: 4,
   model: "Fiat Ducato Knaus",
   year: 2018,
-  user_id: User.last.id
+  user_id: 12,
+  address: "C. de Pallars, 65, 08018 Barcelona"
 }
 
 toptin = {
@@ -109,11 +118,13 @@ toptin = {
   capacity: 4,
   model: "Fiat Ducato",
   year: 2015,
-  user_id: User.last.id
+  # user_id: User.last.id,
+  user_id: 12,
+  address: "Pg. de Joan de Borbó, 30, 08003 Barcelona"
 }
 
 #six links here
-photos = ["https://images.unsplash.com/photo-1561361513-2d000a50f0dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmFufGVufDB8fDB8fA%3D%3D&w=1000&q=80", "https://images.unsplash.com/photo-1609616678796-c288bea5ac24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", "https://images.unsplash.com/photo-1535655685871-dc8158ff167e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80","https://images.unsplash.com/photo-1613750590555-5ad35bd95a99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80", "https://images.unsplash.com/photo-1566334003641-fbbc33f194d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80", "https://images.unsplash.com/photo-1572830093421-377d162ca866?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"]
+photos = ["https://images.unsplash.com/photo-1594495894542-a46cc73e081a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80", "https://images.unsplash.com/photo-1609616678796-c288bea5ac24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", "https://images.unsplash.com/photo-1535655685871-dc8158ff167e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80","https://images.unsplash.com/photo-1613750590555-5ad35bd95a99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80", "https://images.unsplash.com/photo-1566334003641-fbbc33f194d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80", "https://images.unsplash.com/photo-1572830093421-377d162ca866?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"]
 filename = "name"
 number = 0
 [tincan, nomad, kombi, luxmobile, woodvan, toptin].each do |attributes|
