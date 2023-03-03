@@ -1,6 +1,6 @@
 <div class="banner-trips">
   <div class="banner-content">
-    <h3>My Bookings</h3>
+    <h3>My vans</h3>
     <a href="#"><i class="fa-solid fa-caravan"></i></a>
     <p>Time to dust off your bags and start planning your next adventure</p>
     <%= link_to "Book your next adventure", vans_path, class: "btn btn-flat" %>
@@ -9,9 +9,6 @@
 </div>
 
 
-  <div class="mb-3 ms-3">
-    <h3>My vans</h3>
-  </div>
 
   <div class="cards-container-booking">
     <% current_user.vans.each do |van| %>
