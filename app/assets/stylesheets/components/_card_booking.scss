@@ -7,6 +7,14 @@
   margin-top: 25px;
 }
 
+.cards-container-booking p {
+  font-size: 12px;
+  margin-top: 0;
+  color: black;
+  text-align:left;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards-container {
