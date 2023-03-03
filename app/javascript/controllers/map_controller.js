@@ -13,12 +13,18 @@ export default class extends Controller {
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10",
+      dragPan: true,
+      cooperativeGestures: true
     })
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
     // this.map.setZoom(15)
+
+    this.map.scrollZoom.disable();
+    this.map.addControl(new mapboxgl.NavigationControl());
   }
+
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
