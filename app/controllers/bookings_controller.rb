@@ -3,7 +3,8 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[new]
 
   def index
-    @bookings = Booking.all.where(user_id: curent_user.id)
+    @bookings = Booking.all.where(user_id: current_user.id)
+    @received_bookings = current_user.received_bookings
   end
 
   def new; end
@@ -17,6 +18,13 @@ class BookingsController < ApplicationController
     else
       render 'new', status: :unprocessable_entity
     end
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(status: params[:status])
+
+    redirect_to bookings_path
   end
 
   def destroy
@@ -37,6 +45,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:status, :user_id)
+    params.require(:booking).permit(:status, :user_id, :start_date, :end_date)
   end
 end
