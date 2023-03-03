@@ -1,5 +1,5 @@
 class VansController < ApplicationController
-  before_action :set_van, only: %i[show]
+  before_action :set_van, only: %i[show destroy]
 
   def index
     @vans = Van.all
@@ -50,6 +50,19 @@ class VansController < ApplicationController
     else
       render 'new', status: :unprocessable_entity
     end
+  end
+
+  def update
+    @van = Van.find(params[:id])
+    @van.update(status: params[:status])
+
+    redirect_to vans_path
+  end
+
+  def destroy
+    @van.destroy
+
+    redirect_to van_path(@van.user), status: :see_other
   end
 
   private

@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
   resources :bookings, only: %i[destroy update index]
+  get 'received-bookings', to: 'bookings#received_bookings'
 end

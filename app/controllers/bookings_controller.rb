@@ -1,9 +1,13 @@
 class BookingsController < ApplicationController
-  before_action :set_van, only: %i[create new]
+  before_action :set_van, only: %i[create new edit]
   before_action :set_booking, only: %i[new]
 
   def index
     @bookings = Booking.all.where(user_id: current_user.id)
+    @received_bookings = current_user.received_bookings
+  end
+
+  def received_bookings
     @received_bookings = current_user.received_bookings
   end
 
@@ -19,6 +23,8 @@ class BookingsController < ApplicationController
       render 'new', status: :unprocessable_entity
     end
   end
+
+  def edit; end
 
   def update
     @booking = Booking.find(params[:id])

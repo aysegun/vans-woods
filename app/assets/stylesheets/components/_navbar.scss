@@ -32,6 +32,9 @@
   border: #595959 1px solid;
   margin-top: 4px;
   margin-right: 10px;
+    &:hover {
+    border: 1px solid orangered;
+    }
 }
 
 .container-fluid a {
