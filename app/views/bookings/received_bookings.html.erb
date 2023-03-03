@@ -26,22 +26,20 @@
     <h3>Received Bookings</h3>
   </div>
 
-  <div class="cards-container-booking">
-    <% @received_bookings.each do |booking| %>
-      <div class="card-booking">
-        <%= cl_image_tag booking.van.photos.first.key, crop: :fill %>
-        <div class="card-date ms-3 me-3">
-          <h3><%= booking.van.model %></h3>
-          <div class="card-info-booking d-flex justify-content-between">
-            <p><strong>Booking : </strong><strong><%= booking.status %></strong></p>
-            <p>
-              <% if booking.status == "pending" %>
-                <%= button_to "Approve", booking_path(booking, {status: "approved"}), method: :patch %>
-                <%= button_to "Reject", booking_path(booking, {status: "rejected"}), method: :patch %>
-              <% end %>
-            </p>
-          </div>
-          <p>Booking dates: <%= booking.start_date %> - <%= booking.end_date %></p>
+<div class="cards-container-booking">
+  <% @received_bookings.each do |booking| %>
+    <div class="card-booking">
+      <%= cl_image_tag booking.van.photos.first.key, crop: :fill %>
+      <div class="card-date ms-3 me-3">
+        <h3><%= booking.van.model %></h3>
+        <div class="card-info-booking d-flex justify-content-between">
+          <p style="margin-bottom: -10"><strong>Booking : </strong><strong><%= booking.status %></strong></p>
+          <p>
+            <% if booking.status == "pending" %>
+              <%= button_to "Approve", booking_path(booking, {status: "approved"}), method: :patch, id: "btn-approved" %>
+              <%= button_to "Reject", booking_path(booking, {status: "rejected"}), method: :patch, id: "btn-rejected" %>
+            <% end %>
+          </p>
         </div>
       </div>
     <% end %>

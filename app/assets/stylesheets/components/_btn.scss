@@ -12,3 +12,27 @@
   color: white;
   border: 1px solid orangered;
 }
+
+
+#btn-approved {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: #034719;
+  transition: background 0.3s ease;
+  font-size: 8px;
+  font-weight: lighter;
+  margin-top: -12px;
+
+}
+
+#btn-rejected {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background:rgb(118, 25, 25);
+  transition: background 0.3s ease;
+  font-size: 8px;
+  font-weight: lighter;
+  margin-top: -12px;
+}
