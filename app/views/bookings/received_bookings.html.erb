@@ -1,3 +1,13 @@
+<div class="banner-trips">
+  <div class="banner-content">
+    <h3>My Bookings</h3>
+    <a href="#"><i class="fa-solid fa-caravan"></i></a>
+    <p>Time to dust off your bags and start planning your next adventure</p>
+    <%= link_to "Book your next adventure", vans_path, class: "btn btn-flat" %>
+  </div>
+  <%= image_tag "forestvan.png" %>
+</div>
+
 
   <div class="mb-3 ms-3">
     <h3>My vans</h3>
@@ -22,9 +32,18 @@
     <% end %>
   </div>
 
-  <div class="mb-3 mt-3 ms-3">
-    <h3>Received Bookings</h3>
+
+<div class="line"></div>
+<div class="banner-trips">
+  <div class="banner-content">
+    <h3>Received bookings</h3>
+    <a href="#"><i class="fa-solid fa-caravan"></i></a>
+    <p>Time to dust off your bags and start planning your next adventure</p>
+    <%= link_to "Book your next adventure", vans_path, class: "btn btn-flat" %>
   </div>
+  <%= image_tag "hillvan.png" %>
+</div>
+
 
 <div class="cards-container-booking">
   <% @received_bookings.each do |booking| %>
