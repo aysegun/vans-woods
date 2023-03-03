@@ -33,7 +33,10 @@
       <div class="card-date ms-3 me-3">
         <h3><%= booking.van.model %></h3>
         <div class="card-info-booking d-flex justify-content-between">
-          <p style="margin-bottom: -10"><strong>Booking : </strong><strong><%= booking.status %></strong></p>
+          <div>
+            <p style="margin-bottom: 4px"><strong>Booking : </strong><strong><%= booking.status %></strong></p>
+            <p><%= booking.start_date %> - <%= booking.end_date %></p>
+          </div>
           <p>
             <% if booking.status == "pending" %>
               <%= button_to "Approve", booking_path(booking, {status: "approved"}), method: :patch, id: "btn-approved" %>
@@ -42,5 +45,6 @@
           </p>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+</div>
