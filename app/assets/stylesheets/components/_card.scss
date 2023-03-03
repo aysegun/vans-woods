@@ -4,8 +4,22 @@
   grid-gap: 30px;
   width: 90%;
   margin: 0 auto;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.search-container {
+  width:30%;
+  margin: 0 auto;
+
+}
+
+#price {
+  font-size: 14px;
+}
+
+.map-container {
+  margin: 50px
 }
 
 // Smallest device
@@ -73,7 +87,7 @@ font-size: 16px;
 color: black;
 }
 .card-info p {
-  font-size: 12px;
+  font-size: 13px;
   color: black;
   font-family: "Nunito", "Helvetica", "sans-serif";
 }
