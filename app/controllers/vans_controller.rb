@@ -1,5 +1,5 @@
 class VansController < ApplicationController
-  before_action :set_van, only: %i[show destroy]
+  before_action :set_van, only: %i[show destroy edit]
 
   def index
     @vans = Van.all
@@ -52,6 +52,7 @@ class VansController < ApplicationController
     end
   end
 
+  def edit; end
   def update
     @van = Van.find(params[:id])
     @van.update(status: params[:status])

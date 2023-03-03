@@ -1,0 +1,28 @@
+<div class="background-image">
+  <div class="wrapper">
+
+    <div class="header">
+      <h1> Edit your van</h1>
+      <p> Change properties</p>
+    </div>
+
+    <div class="form">
+      <%= simple_form_for (@van) do |f| %>
+      <%= f.input :title, id:"title-input", placeholder: "For example: A compact and family-friendly van"%>
+      <%= f.input :price, placeholder: "Add a price per day"%>
+      <%= f.input :description, placeholder: "Write max. 600 characters" %>
+      <%= f.input :capacity, placeholder: "Your van's passanger capacity"%>
+      <%= f.input :model, placeholder: "Add your van's model"%>
+      <%= f.input :year, placeholder: "Add your van's year"%>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+
+      <div class="submit-div">
+          <%= f.submit 'Submit', id: "submit-button" %>
+        <% end %>
+        <div class="back-link">
+          <%= link_to 'Back', vans_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
