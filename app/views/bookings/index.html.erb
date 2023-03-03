@@ -1,6 +1,5 @@
 
 <div class="mt-3 mb-3 ms-3">
-
 </div>
 
 <div class="banner-trips">
@@ -19,9 +18,9 @@
       <%= cl_image_tag booking.van.photos.first.key, crop: :fill %>
       <div class="card-date ms-3 me-3">
         <h3><%= booking.van.model %></h3>
-        <%= booking.status %>
+        <p style="color: red"><strong><%= booking.status %></strong></p>
       </div>
-      <p>Between <%= booking.start_date %> - <%= booking.end_date %></p>
+      <p style="margin-top: -10px; margin-left: 16px">Between <%= booking.start_date %> - <%= booking.end_date %></p>
     </div>
   <% end %>
 </div>
